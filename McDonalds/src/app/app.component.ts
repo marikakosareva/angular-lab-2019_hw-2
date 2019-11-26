@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import {ProductsService} from './services/products.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'McDonalds';
+  burgers = [];
+
+  constructor(private productsService: ProductsService){
+    this.burgers = productsService.burgers;
+  }
+
+  addProduct(){
+    console.log('+');
+  }
+
+  removeProduct(){
+    console.log('-');
+  }
+
 }
