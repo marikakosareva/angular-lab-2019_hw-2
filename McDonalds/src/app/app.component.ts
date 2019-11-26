@@ -8,18 +8,37 @@ import {ProductsService} from './services/products.service';
 })
 export class AppComponent {
   title = 'McDonalds';
-  burgers = [];
+  products = [];
+  basket = [];
+  sum = 0;
 
   constructor(private productsService: ProductsService){
-    this.burgers = productsService.burgers;
+    this.products = productsService.products;
   }
 
-  addProduct(){
-    console.log('+');
+  
+  addProduct(indexProduct, indexItem){
+    this.products[indexProduct].list[indexItem].amount += 1;
+    this.sum = +(this.sum + this.products[indexProduct].list[indexItem].price).toFixed(2);
+    this.basket.push(this.products[indexProduct].list[indexItem]);
   }
 
-  removeProduct(){
-    console.log('-');
+  removeProduct(indexProduct, indexItem){
+    if (this.products[indexProduct].list[indexItem].amount > 0) {
+      this.products[indexProduct].list[indexItem].amount -= 1;
+      this.sum = +(this.sum - this.products[indexProduct].list[indexItem].price).toFixed(2);
+      this.basket.splice(this.basket.indexOf(this.products[indexProduct].list[indexItem]),1);
+    }
+    
+    
+  }
+
+  deleteProduct(index) {
+    this.sum = +(this.sum + this.basket[index].price).toFixed(2);
+    
+    this.basket[index].amount = 0;
+    this.basket.splice(index, 1);
+    
   }
 
 }

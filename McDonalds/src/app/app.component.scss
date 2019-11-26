@@ -27,3 +27,18 @@
   .mat-list-base .mat-list-item {
     color: #000;
 }
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.product-list {
+  max-width: 1000px;
+}
+
+.product-list h2{
+  text-align: center;
+  padding: 10px 0 10px 0;
+  background-color: #ffdf23c2;
+}
