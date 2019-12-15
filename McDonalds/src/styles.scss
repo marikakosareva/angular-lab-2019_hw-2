@@ -1,4 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '@angular/material/prebuilt-themes/purple-green.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a {text-decoration: none;}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: #9E9E9E;
+}
+
+.mat-input-element {
+    caret-color: #1f532f;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    color:#9E9E9E;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label{
+    color: #1f532f;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple{
+    background-color: #1f532f;
+}
+
+.mat-radio-outer-circle {
+    border-color: #9E9E9E;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #1f532fc4;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-inner-circle {
+    border-color: #1f532fc4;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #1f532fc4;
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    color: #1f532fc4;
+}
+
+.mat-select-panel {
+    background: #c5c5c5;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #1f532fc4;
+}
+
+.mat-select-value {
+    color: #000;
+}

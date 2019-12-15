@@ -1,0 +1,28 @@
+<div class="product-list">
+    <mat-action-list>
+        <mat-list-item *ngFor="let product of products; let indexProduct = index">           
+            <h2 matLine> {{product.name}} </h2> 
+            <mat-action-list matLine>
+                <mat-list-item *ngFor="let item of product.list; let indexItem = index">
+                  <img matListAvatar src="{{'assets/img/' + item.image}}" alt="{{item.name}}">
+                  <h3 matLine> {{item.name}} </h3>
+                  <p matLine>
+                      <br>
+                  </p>
+                  <p matLine>
+                    <span> {{item.price + " \$"}} </span>
+                  </p>
+                  <button mat-icon-button (click)="addProduct(indexProduct, indexItem)">
+                    <mat-icon>add</mat-icon>
+                  </button>
+                  <button mat-icon-button (click)="removeProduct(indexProduct, indexItem)">
+                    <mat-icon>remove</mat-icon>
+                  </button>
+                  <button>
+                    <span>{{item.amount}}</span>
+                  </button>
+                </mat-list-item>
+              </mat-action-list>            
+        </mat-list-item>
+    </mat-action-list>
+  </div>

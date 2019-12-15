@@ -27,6 +27,9 @@ export class ProductsService {
       {name: "Chocolate Muss", price: 1.10, image: "chocolatemuss.png", amount: 0}
     ]},
   ];
+
+  basket = [];
+  sum = 0;
   
   constructor() { }
 

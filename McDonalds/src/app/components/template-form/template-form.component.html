@@ -1,0 +1,49 @@
+<mat-radio-group aria-label="Select an option" [(ngModel)]="deliveryType">
+    <mat-radio-button value="delivery">Delivery</mat-radio-button>
+    <mat-radio-button value="pickup">Pickup</mat-radio-button>
+</mat-radio-group>
+
+<form (ngSubmit)="onSubmit()" #orderFormAddress="ngForm" *ngIf="deliveryType == 'delivery'">
+  <mat-form-field class="user-field">
+    <input matInput placeholder="Name" id="name" name="name" required [(ngModel)]="userData.name"> 
+  </mat-form-field>
+
+  <mat-form-field class="user-field">
+    <input matInput placeholder="Email" id="email" name="email" required [(ngModel)]="userData.email">
+  </mat-form-field>
+
+  <mat-form-field class="user-field">
+      <textarea matInput placeholder="Write your address" name="address" required [(ngModel)]="userData.address"></textarea>
+  </mat-form-field>
+  <div class="submit-button">
+    <button  
+    type="submit" 
+    [disabled]="!orderFormAddress.valid"
+    mat-raised-button>Order</button>
+  </div>
+</form>
+
+<form #orderFormOffice="ngForm" (ngSubmit)="onSubmit()" *ngIf="deliveryType == 'pickup'">
+    <mat-form-field class="user-field">
+      <input matInput placeholder="Name" id="name" name="name" required [(ngModel)]="userData.name">
+    </mat-form-field>
+  
+    <mat-form-field class="user-field">
+      <input matInput placeholder="Email" id="email" name="email" required [(ngModel)]="userData.email">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Offices</mat-label>
+        <mat-select required [(ngModel)]="userData.address" name="address">
+          <mat-option *ngFor="let office of offices" value="{{office}}" >
+            {{office}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="submit-button">
+        <button  
+        type="submit" 
+        [disabled]="!orderFormOffice.valid"
+        mat-raised-button>Order</button>
+      </div>
+  </form>
