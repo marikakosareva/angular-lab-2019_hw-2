@@ -1,0 +1,18 @@
+
+<div class="empty-cart-notification" *ngIf="!basket.length">
+  <ng-content></ng-content>
+</div>
+
+<mat-list-item class="product" *ngFor="let item of basket; let i = index">
+        <img matListAvatar src="{{'assets/img/' + item.image}}" alt="{{item.name}}">
+        <h3 matLine> {{item.name}} </h3>
+        <p matLine>
+            <br>
+        </p>
+        <p matLine>
+          <span> {{item.price + " \$"}} </span>
+        </p>
+        <button mat-icon-button (click)="deleteItem(i)">
+          <mat-icon>close</mat-icon>
+        </button>
+</mat-list-item>

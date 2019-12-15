@@ -16,6 +16,8 @@ import { CartComponent } from './components/cart/cart.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
 import { FormsModule } from '@angular/forms';
+import { CartProductListComponent } from './components/cart-product-list/cart-product-list.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     ProductListComponent,
     MenuComponent,
     CartComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    CartProductListComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

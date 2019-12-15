@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateFormComponent implements OnInit {
 
-  deliveryType: string;
+  deliveryType: string = 'delivery';
   offices = ['Chyornaya rechka', 'Ozerki', 'Petrogradskaya'];
   userData = {name: "", email: "", address: ""};
 

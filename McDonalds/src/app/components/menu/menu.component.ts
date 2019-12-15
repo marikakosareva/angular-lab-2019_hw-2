@@ -19,17 +19,17 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-   addProduct(indexProduct, indexItem){
-    this.products[indexProduct].list[indexItem].amount += 1;
-    this.productsService.sum = +(this.productsService.sum + this.products[indexProduct].list[indexItem].price).toFixed(2);
-    this.basket.push(this.products[indexProduct].list[indexItem]);
+   addProduct(event){
+    this.products[event.indexProduct].list[event.indexItem].amount += 1;
+    this.productsService.sum = +(this.productsService.sum + this.products[event.indexProduct].list[event.indexItem].price).toFixed(2);
+    this.basket.push(this.products[event.indexProduct].list[event.indexItem]);
   }
 
-  removeProduct(indexProduct, indexItem){
-    if (this.products[indexProduct].list[indexItem].amount > 0) {
-      this.products[indexProduct].list[indexItem].amount -= 1;
-      this.productsService.sum = +(this.productsService.sum - this.products[indexProduct].list[indexItem].price).toFixed(2);
-      this.basket.splice(this.basket.indexOf(this.products[indexProduct].list[indexItem]),1);
+  removeProduct(event){
+    if (this.products[event.indexProduct].list[event.indexItem].amount > 0) {
+      this.products[event.indexProduct].list[event.indexItem].amount -= 1;
+      this.productsService.sum = +(this.productsService.sum - this.products[event.indexProduct].list[event.indexItem].price).toFixed(2);
+      this.basket.splice(this.basket.indexOf(this.products[event.indexProduct].list[event.indexItem]),1);
     }
     
     
