@@ -14,19 +14,16 @@ export class CartComponent implements OnInit {
   constructor(private productsService: ProductsService) {
     this.products = productsService.products;
     this.basket = productsService.basket; 
-   }
+  }
 
   ngOnInit() {
   }
 
-  deleteProduct(index) {
+  deleteProduct(index: number) {
     this.productsService.sum = +(this.productsService.sum - this.productsService.basket[index].price).toFixed(2);
-    
     this.productsService.basket[index].amount = 0;
-    this.productsService.basket.splice(index, 1);
-    
+    this.productsService.basket.splice(index, 1); 
   }
-
 }
 
 

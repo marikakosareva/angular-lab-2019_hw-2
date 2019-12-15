@@ -14,25 +14,22 @@ export class MenuComponent implements OnInit {
   constructor(private productsService: ProductsService) {
     this.products = productsService.products;
     this.basket = productsService.basket; 
-   }
+  }
   
   ngOnInit() {
   }
 
-   addProduct(event){
+  addProduct(event: any){
     this.products[event.indexProduct].list[event.indexItem].amount += 1;
     this.productsService.sum = +(this.productsService.sum + this.products[event.indexProduct].list[event.indexItem].price).toFixed(2);
     this.basket.push(this.products[event.indexProduct].list[event.indexItem]);
   }
 
-  removeProduct(event){
+  removeProduct(event: any){
     if (this.products[event.indexProduct].list[event.indexItem].amount > 0) {
       this.products[event.indexProduct].list[event.indexItem].amount -= 1;
       this.productsService.sum = +(this.productsService.sum - this.products[event.indexProduct].list[event.indexItem].price).toFixed(2);
       this.basket.splice(this.basket.indexOf(this.products[event.indexProduct].list[event.indexItem]),1);
     }
-    
-    
   }
-
 }

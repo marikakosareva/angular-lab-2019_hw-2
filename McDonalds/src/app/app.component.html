@@ -1,10 +1,9 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
-  
+<div class="toolbar" role="banner">  
   <div class="logoblock">
     <img class="logo"
-    alt="McDonald's Logo"
-    src="assets/img/mcd.png"
+      alt="McDonald's Logo"
+      src="assets/img/mcd.png"
     />
     <p>McDonald's</p>
   </div>
@@ -16,64 +15,8 @@
       <img class="bsklogo" src="assets/img/bsk.png"/>
     </a>
   </div>
-
 </div>
 
-
-
-
 <div class="content" role="main">
-
-    <router-outlet></router-outlet>
-
-    <!-- <div class="product-list">
-    <mat-action-list>
-        <mat-list-item *ngFor="let product of products; let indexProduct = index">           
-            <h2 matLine> {{product.name}} </h2> 
-            <mat-action-list matLine>
-                <mat-list-item *ngFor="let item of product.list; let indexItem = index">
-                  <img matListAvatar src="{{'assets/img/' + item.image}}" alt="{{item.name}}">
-                  <h3 matLine> {{item.name}} </h3>
-                  <p matLine>
-                      <br>
-                  </p>
-                  <p matLine>
-                    <span> {{item.price + " \$"}} </span>
-                  </p>
-                  <button mat-icon-button (click)="addProduct(indexProduct, indexItem)">
-                    <mat-icon>add</mat-icon>
-                  </button>
-                  <button mat-icon-button (click)="removeProduct(indexProduct, indexItem)">
-                    <mat-icon>remove</mat-icon>
-                  </button>
-                  <button>
-                    <span>{{item.amount}}</span>
-                  </button>
-                </mat-list-item>
-              </mat-action-list>            
-        </mat-list-item>
-    </mat-action-list>
-  </div> -->
-
-  <!-- <mat-action-list>
-      <mat-list-item *ngFor="let item of basket; let i = index">
-        <img matListAvatar src="{{'assets/img/' + item.image}}" alt="{{item.name}}">
-        <h3 matLine> {{item.name}} </h3>
-        <p matLine>
-            <br>
-        </p>
-        <p matLine>
-          <span> {{item.price + " \$"}} </span>
-        </p>
-        <button mat-icon-button (click)="deleteProduct(i)">
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-list-item>
-      <h3>Total price:</h3>
-      <h3>{{sum}}</h3>
-    </mat-action-list> -->
-
-    
-
-    
+  <router-outlet></router-outlet>    
 </div> 

@@ -18,5 +18,4 @@ export class CartProductListComponent implements OnInit {
   deleteItem(index: number){
     this.deleteItemEvent.emit(index);
   }
-
 }

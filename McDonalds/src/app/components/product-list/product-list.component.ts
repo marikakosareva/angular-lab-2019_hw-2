@@ -24,5 +24,4 @@ export class ProductListComponent implements OnInit {
   removeItem(indexProduct: number, indexItem: number){
     this.removeItemEvent.emit({indexProduct: indexProduct, indexItem: indexItem});
   }
-
 }

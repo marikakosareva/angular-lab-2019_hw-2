@@ -1,29 +1,15 @@
-<mat-action-list>
-      <!-- <mat-list-item *ngFor="let item of basket; let i = index">
-        <img matListAvatar src="{{'assets/img/' + item.image}}" alt="{{item.name}}">
-        <h3 matLine> {{item.name}} </h3>
-        <p matLine>
-            <br>
-        </p>
-        <p matLine>
-          <span> {{item.price + " \$"}} </span>
-        </p>
-        <button mat-icon-button (click)="deleteProduct(i)">
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-list-item> -->
-      <app-cart-product-list 
-      [basket]="basket"
-      (deleteItemEvent)="deleteProduct($event)"
-      >
+<mat-action-list>  
+  <app-cart-product-list 
+    [basket]="basket"
+    (deleteItemEvent)="deleteProduct($event)"
+  >
     <p>Cart is empty!</p>
-    </app-cart-product-list>
-      <h3>Total price:</h3>
-      <h3>{{productsService.sum + " \$"}}</h3>
+  </app-cart-product-list>
+  <h3>Total price:</h3>
+  <h3>{{productsService.sum + " \$"}}</h3>
 </mat-action-list>
 
 <div *ngIf=basket.length>
-        <h3>Order form:</h3>
-        
-        <app-template-form></app-template-form>
+  <h3>Order form:</h3>
+  <app-template-form></app-template-form>
 </div>

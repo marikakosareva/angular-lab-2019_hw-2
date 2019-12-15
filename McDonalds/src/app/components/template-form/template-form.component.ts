@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateFormComponent implements OnInit {
 
-  deliveryType: string = 'delivery';
+  deliveryType = 'delivery';
   offices = ['Chyornaya rechka', 'Ozerki', 'Petrogradskaya'];
   userData = {name: "", email: "", address: ""};
 
@@ -22,5 +22,4 @@ export class TemplateFormComponent implements OnInit {
     alert("Order have been sent!");
     window.location.href="/menu";
   }
-
 }

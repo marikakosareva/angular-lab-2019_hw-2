@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductsService {
-
   products = [
     { name: "Burgers", list: [
         {name: "Beefburger", price: 0.95, image: "gamburger.png", amount: 0},
@@ -32,5 +31,4 @@ export class ProductsService {
   sum = 0;
   
   constructor() { }
-
 }

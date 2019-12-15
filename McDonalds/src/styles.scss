@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/purple-green.css';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -7,10 +8,6 @@ a {text-decoration: none;}
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
     background-color: #9E9E9E;
-}
-
-.mat-input-element {
-    caret-color: #1f532f;
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-label {
@@ -59,4 +56,8 @@ a {text-decoration: none;}
 
 .mat-list-base .mat-list-item {
     color: #000;
+}
+
+.mat-input-element {
+    caret-color: #1f532f;
 }

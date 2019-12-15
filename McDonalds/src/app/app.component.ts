@@ -14,7 +14,6 @@ export class AppComponent {
     this.products = productsService.products;
   }
 
-  
   addProduct(indexProduct, indexItem){
     this.products[indexProduct].list[indexItem].amount += 1;
     this.productsService.sum = +(this.productsService.sum + this.products[indexProduct].list[indexItem].price).toFixed(2);
@@ -27,16 +26,11 @@ export class AppComponent {
       this.productsService.sum = +(this.productsService.sum - this.products[indexProduct].list[indexItem].price).toFixed(2);
       this.productsService.basket.splice(this.productsService.basket.indexOf(this.products[indexProduct].list[indexItem]),1);
     }
-    
-    
   }
 
-  deleteProduct(index) {
-    this.productsService.sum = +(this.productsService.sum + this.productsService.basket[index].price).toFixed(2);
-    
+  deleteProduct(index: number) {
+    this.productsService.sum = +(this.productsService.sum + this.productsService.basket[index].price).toFixed(2);   
     this.productsService.basket[index].amount = 0;
-    this.productsService.basket.splice(index, 1);
-    
+    this.productsService.basket.splice(index, 1); 
   }
-
 }
