@@ -9,11 +9,11 @@ import { ProductsService } from 'src/app/services/products.service';
 export class MenuComponent implements OnInit {
 
   products = [];
-  basket = [];
+  cart = [];
 
   constructor(private productsService: ProductsService) {
     this.products = productsService.products;
-    this.basket = productsService.basket; 
+    this.cart = productsService.cart; 
   }
   
   ngOnInit() {
@@ -22,14 +22,14 @@ export class MenuComponent implements OnInit {
   addProduct(event: any){
     this.products[event.indexProduct].list[event.indexItem].amount += 1;
     this.productsService.sum = +(this.productsService.sum + this.products[event.indexProduct].list[event.indexItem].price).toFixed(2);
-    this.basket.push(this.products[event.indexProduct].list[event.indexItem]);
+    this.cart.push(this.products[event.indexProduct].list[event.indexItem]);
   }
 
   removeProduct(event: any){
     if (this.products[event.indexProduct].list[event.indexItem].amount > 0) {
       this.products[event.indexProduct].list[event.indexItem].amount -= 1;
       this.productsService.sum = +(this.productsService.sum - this.products[event.indexProduct].list[event.indexItem].price).toFixed(2);
-      this.basket.splice(this.basket.indexOf(this.products[event.indexProduct].list[event.indexItem]),1);
+      this.cart.splice(this.cart.indexOf(this.products[event.indexProduct].list[event.indexItem]),1);
     }
   }
 }

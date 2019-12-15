@@ -1,6 +1,6 @@
 <mat-action-list>  
   <app-cart-product-list 
-    [basket]="basket"
+    [cart]="cart"
     (deleteItemEvent)="deleteProduct($event)"
   >
     <p>Cart is empty!</p>
@@ -9,7 +9,7 @@
   <h3>{{productsService.sum + " \$"}}</h3>
 </mat-action-list>
 
-<div *ngIf=basket.length>
+<div *ngIf=cart.length>
   <h3>Order form:</h3>
   <app-template-form></app-template-form>
 </div>

@@ -27,7 +27,7 @@ export class ProductsService {
     ]},
   ];
 
-  basket = [];
+  cart = [];
   sum = 0;
   
   constructor() { }

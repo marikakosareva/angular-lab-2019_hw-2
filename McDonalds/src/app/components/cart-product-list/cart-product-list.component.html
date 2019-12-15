@@ -1,9 +1,9 @@
 
-<div class="empty-cart-notification" *ngIf="!basket.length">
+<div class="empty-cart-notification" *ngIf="!cart.length">
   <ng-content></ng-content>
 </div>
 
-<mat-list-item class="product" *ngFor="let item of basket; let i = index">
+<mat-list-item class="product" *ngFor="let item of cart; let i = index">
   <img matListAvatar src="{{'assets/img/' + item.image}}" alt="{{item.name}}">
   <h3 matLine> {{item.name}} </h3>
   <p matLine>
